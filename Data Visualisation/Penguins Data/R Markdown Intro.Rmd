@@ -1,0 +1,38 @@
+---
+title: "Penguins Data R Markdown Report"
+author: "Tai Nyirenda"
+date: "2023-07-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Summary
+
+This is an R Markdown document on three species of Palmer Penguins. This analysis looks at the relationship between the body mass of the penguins and the flipper length of the penguins.
+other characteristics that also explored are:
+
+* Species
+* Sex
+* Island
+
+Below is a Summary preview of the data:
+
+```{r palmerpenguins, echo=FALSE}
+library("palmerpenguins")
+head(penguins)
+```
+
+## Graph Plot
+
+![Here is an example of the distribution]:
+
+```{r species, echo=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(data=penguins)+geom_point(mapping=aes(x=flipper_length_mm,y=body_mass_g,colour=species, shape=species))+labs(title="Palmer Penguins: Body Mass vs. Flipper Length", subtitle="Samples of Three Penguin Species", caption="Data collected by Dr. Kristen Gorman")+
+  annotate("text", x=220,y=3500,label="The Gentoos are the largest", color="purple", fontface="bold", size=3)
+```
+
+Note: This is just an example of an R MarkDown report created using RStudio.
